@@ -23,20 +23,16 @@ public class Turret : MonoBehaviour
 
     void UpdateTarget() {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag);
+        target = null;
         float shortestDistance = Mathf.Infinity;
-        GameObject nearestEnemy = null;
 
         foreach (GameObject enemy in enemies) {
             float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
             if (distanceToEnemy < shortestDistance) {
                 shortestDistance = distanceToEnemy;
-                nearestEnemy = enemy;
-            }
-
-            if (nearestEnemy != null && shortestDistance <= range) {
-                target = nearestEnemy.transform;
-            } else {
-                target = null;
+                if (shortestDistance <= range) {
+                    target = enemy.transform;
+                }
             }
         }
     }

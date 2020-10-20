@@ -6,16 +6,29 @@ using UnityEngine.UI;
 
 public class WaveSpawner : MonoBehaviour
 {
-    public Transform EnemayPrefab;
+    public Transform NormalEnemy;
+    public Transform TankEnemy;
+    public Transform SpeedEnemy;
+    public Transform FastAsFuckBoiEnemy;
 
     public Transform SpawnPoint;
 
     public float Time_btw_waves = 5f;
     private float countdow = 2f;
+    private List<List<int>> waves = new List<List<int>>();
+    private Dictionary<EnemyType, Transform> dict = new Dictionary<EnemyType, Transform>();
 
     public Text WaveCountdownTest;
 
-    private int Waveindex = 0;
+    private int Waveindex = -1;
+
+    void Start () {
+        dict.Add(EnemyType.Normal, NormalEnemy);
+        dict.Add(EnemyType.Tank, TankEnemy);
+        dict.Add(EnemyType.Speed, SpeedEnemy);
+        dict.Add(EnemyType.FastAsFuckBoi, FastAsFuckBoiEnemy);
+        waves.Add(new List<int> { 0 } );
+    }
 
     void Update()
     {
@@ -32,14 +45,15 @@ public class WaveSpawner : MonoBehaviour
     IEnumerator SpawnWave()
     {
         Waveindex++;
-        for (int i = 0; i < Waveindex; i++) {
-            SpawnEnemy();
+        foreach (EnemyType type in waves[Waveindex]) {
+            SpawnEnemy(type);
             yield return new WaitForSeconds(0.5f);
         }
     }
 
-    void SpawnEnemy()
+    void SpawnEnemy(EnemyType type)
     {
-        Instantiate(EnemayPrefab, SpawnPoint.position, SpawnPoint.rotation);
+        Transform Enemy = Instantiate(dict[type], SpawnPoint.position, SpawnPoint.rotation);
+        Enemy.gameObject.GetComponent<Enemy>().MultWave(Waveindex);
     }
 }

@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float speed = 10f;
+    public float speed;
+    public float hp;
+    
 
     private Transform target;
     private int wavepointIndex = 0;
@@ -30,5 +32,16 @@ public class Enemy : MonoBehaviour
 
         wavepointIndex++;
         target = Waypoints.points[wavepointIndex];
+    }
+
+    public void Hit(float power) {
+        hp -= power;
+        if (hp <= 0) {
+            Destroy(gameObject);
+        } 
+    }
+
+    public void MultWave(int w) {
+        hp += (float)(hp * (w * 0.1));
     }
 }
