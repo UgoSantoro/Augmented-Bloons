@@ -44,7 +44,6 @@ public class Enemy : MonoBehaviour
         if (hp <= 0) {
             Destroy(gameObject);
         }
-
     }
 
     public void MultWave(int w) {
