@@ -36,12 +36,14 @@ public class WaveSpawner : MonoBehaviour
 
     void Update()
     {
-      if (countdow <= 0f)
+        if (countdow <= 0f && Waveindex + 1 < waves.Count)
         {
             StartCoroutine(SpawnWave());
+        }
+        if (GameObject.FindGameObjectsWithTag("Enemy").Length != 0)
+        {
             countdow = Time_btw_waves;
         }
-
         countdow -= Time.deltaTime;
         WaveCountdownTest.text = Mathf.Round(countdow).ToString();
     }
