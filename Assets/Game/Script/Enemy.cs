@@ -11,12 +11,14 @@ public class Enemy : MonoBehaviour
 
     public Image Healthbar;
 
+    private GameObject gameHandler;
     private Transform target;
     private int wavepointIndex = 0;
 
     void Start () {
         target = Waypoints.points[0];
         hp = starthp;
+        gameHandler = GameObject.Find("GameHandler");
     }
 
     void Update () {
@@ -40,9 +42,13 @@ public class Enemy : MonoBehaviour
 
     public void Hit(float power) {
         hp -= power;
+
         Healthbar.fillAmount = hp / starthp;
         if (hp <= 0) {
+            gameHandler.GetComponent<WaveSpawner>().money = gameHandler.GetComponent<WaveSpawner>().money + ( (power + hp) / 2) + 10;
             Destroy(gameObject);
+        } else {
+            gameHandler.GetComponent<WaveSpawner>().money = gameHandler.GetComponent<WaveSpawner>().money + ( power / 2);
         }
     }
 

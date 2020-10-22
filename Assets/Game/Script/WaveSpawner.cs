@@ -22,6 +22,8 @@ public class WaveSpawner : MonoBehaviour
 
     private int Waveindex = -1;
 
+    public float money = 300;
+
     void Start () {
         dict.Add(EnemyType.Normal, NormalEnemy);
         dict.Add(EnemyType.Tank, TankEnemy);
