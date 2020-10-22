@@ -110,3 +110,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hoverColor: {r: 0.735849, g: 0.7290708, b: 0.2880918, a: 0}
   positionOffset: {x: 0, y: 1, z: 0}
+  Shop: {fileID: 2716764572635857022, guid: acc09f8c51a90ed4998ddf71181dbffa, type: 3}
