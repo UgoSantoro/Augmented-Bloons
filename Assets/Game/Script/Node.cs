@@ -29,14 +29,7 @@ public class Node : MonoBehaviour
     // Update is called once per frame
     void OnMouseDown()
     {
-        /*
-        if (buildmanager.GetTurretToBuild() == null)
-            return;
-        */
         if (EventSystem.current.IsPointerOverGameObject())
-            return;
-
-        if (turret != null)
             return;
 
         if (BuildManager.instance.ShopParent.childCount >= 1)
@@ -52,6 +45,7 @@ public class Node : MonoBehaviour
         clone.GetComponentInChildren<Shop>().positionOffset = positionOffset;
         clone.GetComponentInChildren<Shop>().nodeposition = transform.position;
         clone.GetComponentInChildren<Shop>().actualObject = clone;
+        clone.GetComponentInChildren<Shop>().node = transform.gameObject;
     }
 
     void OnMouseEnter()

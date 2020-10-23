@@ -9,6 +9,7 @@ public class Shop : MonoBehaviour
     private GameObject turret;
 
     public GameObject actualObject;
+    public GameObject node;
 
     public Vector3 positionOffset;
     public Vector3 nodeposition;
@@ -20,6 +21,9 @@ public class Shop : MonoBehaviour
 
     public void Create_Turret1()
     {
+
+        if (node.GetComponent<Node>().turret != null)
+            return;
         buildmanager.SetTurretToBuild(buildmanager.TurretPrefab);
 
         if (buildmanager.GetTurretToBuild() == null)
@@ -27,6 +31,8 @@ public class Shop : MonoBehaviour
 
         GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
         turret = (GameObject)Instantiate(turretToBuild, nodeposition + positionOffset, transform.rotation);
+        node.GetComponent<Node>().turret = turret;
+        Destroy(actualObject);
 
     }
 
