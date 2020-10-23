@@ -6,13 +6,16 @@ using UnityEngine.UI;
 
 public class WaveSpawner : MonoBehaviour
 {
+    [Header("Enemy Type")]
     public Transform NormalEnemy;
     public Transform TankEnemy;
     public Transform SpeedEnemy;
     public Transform FastAsFuckBoiEnemy;
 
+    [Header("Start")]
     public Transform SpawnPoint;
 
+    [Header("Settings")]
     public float Time_btw_waves = 5f;
     private float countdow = 2f;
     private List<List<int>> waves = new List<List<int>>();
@@ -22,7 +25,14 @@ public class WaveSpawner : MonoBehaviour
 
     private int Waveindex = -1;
 
+    [Header("Money")]
     public float money = 300;
+    public Text MoneyDisplay;
+
+
+    [Header("Wave")]
+    public Text WaveDisplay;
+    private int wave;
 
     void Start () {
         dict.Add(EnemyType.Normal, NormalEnemy);
@@ -48,6 +58,8 @@ public class WaveSpawner : MonoBehaviour
         }
         countdow -= Time.deltaTime;
         WaveCountdownTest.text = Mathf.Round(countdow).ToString();
+        MoneyDisplay.text = money.ToString();
+        WaveDisplay.text = (Waveindex + 1).ToString() + " / " + waves.Count.ToString();
     }
 
     IEnumerator SpawnWave()

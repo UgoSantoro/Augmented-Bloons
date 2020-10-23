@@ -6,11 +6,11 @@ using UnityEngine.EventSystems;
 public class Shop : MonoBehaviour
 {
     BuildManager buildmanager;
+
     private GameObject turret;
 
     public GameObject actualObject;
     public GameObject node;
-
     public Vector3 positionOffset;
     public Vector3 nodeposition;
 
@@ -19,15 +19,26 @@ public class Shop : MonoBehaviour
         buildmanager = BuildManager.instance;
     }
 
-    public void Create_Turret1()
+    public void Create_Turret()
     {
-
-        if (node.GetComponent<Node>().turret != null)
-            return;
+        if (node.GetComponent<Node>().turret != null) return;
         buildmanager.SetTurretToBuild(buildmanager.TurretPrefab);
 
-        if (buildmanager.GetTurretToBuild() == null)
-            return;
+        if (buildmanager.GetTurretToBuild() == null) return;
+
+        GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
+        turret = (GameObject)Instantiate(turretToBuild, nodeposition + positionOffset, node.transform.rotation);
+        node.GetComponent<Node>().turret = turret;
+        Destroy(actualObject);
+
+    }
+
+    public void Create_Missile()
+    {
+        if (node.GetComponent<Node>().turret != null) return;
+        buildmanager.SetTurretToBuild(buildmanager.MissilePrefab);
+
+        if (buildmanager.GetTurretToBuild() == null) return;
 
         GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
         turret = (GameObject)Instantiate(turretToBuild, nodeposition + positionOffset, transform.rotation);
@@ -35,10 +46,17 @@ public class Shop : MonoBehaviour
         Destroy(actualObject);
 
     }
-
-    public void Create_Turret2()
+    public void Create_Laser()
     {
+        if (node.GetComponent<Node>().turret != null) return;
+        buildmanager.SetTurretToBuild(buildmanager.LaserPrefab);
 
+        if (buildmanager.GetTurretToBuild() == null) return;
+
+        GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
+        turret = (GameObject)Instantiate(turretToBuild, nodeposition + positionOffset, node.transform.rotation);
+        node.GetComponent<Node>().turret = turret;
+        Destroy(actualObject);
     }
 
     public GameObject get_turret()

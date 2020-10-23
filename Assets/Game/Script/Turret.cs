@@ -5,16 +5,22 @@ using UnityEngine;
 public class Turret : MonoBehaviour
 {
     private Transform target;
-    [Header("Attributes")]
+    [Header("General")]
     public float fireRate = 1f;
+
+    [Header("Use Bullets (default)")]
+    public GameObject bulletPrefab;
     private float fireCountdown = 0f;
     public float range = 15f;
+
+    [Header("Use Laser")]
+    public bool uselaser = false;
+    public LineRenderer linerenderer;
 
     [Header("Unity Setup Fields")]
     public string enemyTag = "Enemy";
     public Transform partToRotate;
 
-    public GameObject bulletPrefab;
     public Transform firePoint;
 
     void Start() {
@@ -41,19 +47,45 @@ public class Turret : MonoBehaviour
     void Update()
     {
         if (target == null) {
+            if (uselaser)
+            {
+                if (linerenderer.enabled)
+                    linerenderer.enabled = false;
+            }
             return;
         }
+        LockOnTarget();
 
+        if (uselaser)
+        {
+            Laser();
+        } else
+        {
+            if (fireCountdown <= 0f) {
+                Shoot();
+                fireCountdown = 1f / fireRate;
+            }
+            fireCountdown -= Time.deltaTime;
+        }
+
+    }
+
+    void LockOnTarget ()
+    {
         Vector3 dir = target.position - transform.position;
         Quaternion lookRotation = Quaternion.LookRotation(dir);
         Vector3 rotation = lookRotation.eulerAngles;
         partToRotate.rotation = Quaternion.Euler(0f, rotation.y, rotation.z);
+    }
 
-        if (fireCountdown <= 0f) {
-            Shoot();
-            fireCountdown = 1f / fireRate;
+    void Laser()
+    {
+        if (!linerenderer.enabled)
+        {
+            linerenderer.enabled = true;
         }
-        fireCountdown -= Time.deltaTime;
+        linerenderer.SetPosition(0, firePoint.position);
+        linerenderer.SetPosition(1, target.position);
     }
 
     void Shoot () {

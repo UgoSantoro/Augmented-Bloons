@@ -17,6 +17,8 @@ public class BuildManager : MonoBehaviour
     }
 
     public GameObject TurretPrefab;
+    public GameObject MissilePrefab;
+    public GameObject LaserPrefab;
 
     private GameObject turretToBuild;
 
