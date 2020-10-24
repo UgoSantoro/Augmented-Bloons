@@ -41,7 +41,7 @@ public class Shop : MonoBehaviour
         if (buildmanager.GetTurretToBuild() == null) return;
 
         GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
-        turret = (GameObject)Instantiate(turretToBuild, nodeposition + positionOffset, transform.rotation);
+        turret = (GameObject)Instantiate(turretToBuild, nodeposition + new Vector3(0, 0, 0), node.transform.rotation);
         node.GetComponent<Node>().turret = turret;
         Destroy(actualObject);
 
