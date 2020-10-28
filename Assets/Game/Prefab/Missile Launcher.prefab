@@ -58,7 +58,7 @@ Transform:
   m_GameObject: {fileID: 3367611209294316239}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 16.9, y: 0.5, z: 42.94}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.33, y: 0.33, z: 0.33}
   m_Children:
   - {fileID: 8120418744785634725}
   - {fileID: 8980362872353310279}
@@ -78,10 +78,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireRate: 0.25
+  bulletPrefab: {fileID: 5096458224350122471, guid: ceeb1045164f4244d89840296850a09e, type: 3}
   range: 30
+  uselaser: 0
+  linerenderer: {fileID: 0}
   enemyTag: Enemy
   partToRotate: {fileID: 8120418744785634725}
-  bulletPrefab: {fileID: 5096458224350122471, guid: ceeb1045164f4244d89840296850a09e, type: 3}
   firePoint: {fileID: 378112412691405843}
 --- !u!1 &3407436373284036056
 GameObject:
@@ -142,8 +144,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7ca8862fdf5bb1548a25754d07d99d1f, type: 2}
-  - {fileID: 2100000, guid: 5a857d6953880034db2fdae585ea43fe, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -254,8 +256,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 7ca8862fdf5bb1548a25754d07d99d1f, type: 2}
-  - {fileID: 2100000, guid: 5a857d6953880034db2fdae585ea43fe, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
