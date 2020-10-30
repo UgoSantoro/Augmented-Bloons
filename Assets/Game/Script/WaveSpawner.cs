@@ -57,9 +57,12 @@ public class WaveSpawner : MonoBehaviour
             countdow = Time_btw_waves;
         }
         countdow -= Time.deltaTime;
-        WaveCountdownTest.text = Mathf.Round(countdow).ToString();
-        MoneyDisplay.text = money.ToString();
-        WaveDisplay.text = (Waveindex + 1).ToString() + " / " + waves.Count.ToString();
+        if (WaveCountdownTest != null)
+            WaveCountdownTest.text = Mathf.Round(countdow).ToString();
+        if (MoneyDisplay != null)
+            MoneyDisplay.text = money.ToString();
+        if (WaveDisplay != null)
+            WaveDisplay.text = (Waveindex + 1).ToString() + " / " + waves.Count.ToString();
     }
 
     IEnumerator SpawnWave()
@@ -74,6 +77,7 @@ public class WaveSpawner : MonoBehaviour
     void SpawnEnemy(EnemyType type)
     {
         Transform Enemy = Instantiate(dict[type], SpawnPoint.position, SpawnPoint.rotation);
+        Enemy.localScale = new Vector3(1, 1, 1);
         Enemy.gameObject.GetComponent<Enemy>().MultWave(Waveindex);
     }
 }
