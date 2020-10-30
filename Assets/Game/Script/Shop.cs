@@ -13,15 +13,26 @@ public class Shop : MonoBehaviour
     public GameObject node;
     public Vector3 positionOffset;
     public Vector3 nodeposition;
+    private GameObject gameHandler;
+    private float money;
+
 
     void Start()
     {
         buildmanager = BuildManager.instance;
+        gameHandler = GameObject.Find("GameHandler");
+        money = gameHandler.GetComponent<WaveSpawner>().money;
+    }
+
+    void Update()
+    {
+        money = gameHandler.GetComponent<WaveSpawner>().money;
+        Debug.Log(money);
     }
 
     public void Create_Turret()
     {
-        if (node.GetComponent<Node>().turret != null) return;
+        if (node.GetComponent<Node>().turret != null || money < 70) return;
         buildmanager.SetTurretToBuild(buildmanager.TurretPrefab);
 
         if (buildmanager.GetTurretToBuild() == null) return;
@@ -29,13 +40,14 @@ public class Shop : MonoBehaviour
         GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
         turret = (GameObject)Instantiate(turretToBuild, nodeposition + positionOffset, node.transform.rotation);
         node.GetComponent<Node>().turret = turret;
+        gameHandler.GetComponent<WaveSpawner>().money -= 70;
         Destroy(actualObject);
 
     }
 
     public void Create_Missile()
     {
-        if (node.GetComponent<Node>().turret != null) return;
+        if (node.GetComponent<Node>().turret != null || money < 70) return;
         buildmanager.SetTurretToBuild(buildmanager.MissilePrefab);
 
         if (buildmanager.GetTurretToBuild() == null) return;
@@ -43,12 +55,13 @@ public class Shop : MonoBehaviour
         GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
         turret = (GameObject)Instantiate(turretToBuild, nodeposition + new Vector3(0, 0, 0), node.transform.rotation);
         node.GetComponent<Node>().turret = turret;
+        gameHandler.GetComponent<WaveSpawner>().money -= 70;
         Destroy(actualObject);
 
     }
     public void Create_Laser()
     {
-        if (node.GetComponent<Node>().turret != null) return;
+        if (node.GetComponent<Node>().turret != null || money < 70) return;
         buildmanager.SetTurretToBuild(buildmanager.LaserPrefab);
 
         if (buildmanager.GetTurretToBuild() == null) return;
@@ -56,6 +69,7 @@ public class Shop : MonoBehaviour
         GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
         turret = (GameObject)Instantiate(turretToBuild, nodeposition + positionOffset, node.transform.rotation);
         node.GetComponent<Node>().turret = turret;
+        gameHandler.GetComponent<WaveSpawner>().money -= 70;
         Destroy(actualObject);
     }
 
