@@ -27,7 +27,6 @@ public class Shop : MonoBehaviour
     void Update()
     {
         money = gameHandler.GetComponent<WaveSpawner>().money;
-        Debug.Log(money);
     }
 
     public void Create_Turret()
@@ -67,7 +66,7 @@ public class Shop : MonoBehaviour
         if (buildmanager.GetTurretToBuild() == null) return;
 
         GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
-        turret = (GameObject)Instantiate(turretToBuild, nodeposition + positionOffset, node.transform.rotation);
+        turret = (GameObject)Instantiate(turretToBuild, nodeposition + new Vector3(0, 0.1f, 0), node.transform.rotation);
         node.GetComponent<Node>().turret = turret;
         gameHandler.GetComponent<WaveSpawner>().money -= 70;
         Destroy(actualObject);
