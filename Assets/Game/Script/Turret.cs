@@ -86,6 +86,11 @@ public class Turret : MonoBehaviour
         }
         linerenderer.SetPosition(0, firePoint.position);
         linerenderer.SetPosition(1, target.position);
+        if (fireCountdown <= 0f) {
+            target.gameObject.GetComponent<Enemy>().Hit(0.1f);
+            fireCountdown = 1f / fireRate / 30;
+        }
+        fireCountdown -= Time.deltaTime;
     }
 
     void Shoot () {
