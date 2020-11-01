@@ -16,6 +16,8 @@ public class WaveSpawner : MonoBehaviour
     public Transform SpawnPoint;
 
     [Header("Settings")]
+
+    public Transform ParentElement;
     public GameObject End;
     public float Time_btw_waves = 5f;
     private float countdow = 2f;
@@ -181,5 +183,6 @@ public class WaveSpawner : MonoBehaviour
         Transform Enemy = Instantiate(dict[type], SpawnPoint.position, SpawnPoint.rotation);
         Enemy.localScale = new Vector3(1, 1, 1);
         Enemy.gameObject.GetComponent<Enemy>().MultWave(Waveindex);
+        Enemy.SetParent(ParentElement);
     }
 }

@@ -38,6 +38,7 @@ public class Shop : MonoBehaviour
 
         GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
         turret = (GameObject)Instantiate(turretToBuild, nodeposition + positionOffset, node.transform.rotation);
+        turret.transform.SetParent(BuildManager.instance.ParentElement);
         node.GetComponent<Node>().turret = turret;
         gameHandler.GetComponent<WaveSpawner>().money -= 70;
         Destroy(actualObject);
@@ -53,6 +54,7 @@ public class Shop : MonoBehaviour
 
         GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
         turret = (GameObject)Instantiate(turretToBuild, nodeposition + new Vector3(0, 0.1f, 0), node.transform.rotation);
+        turret.transform.SetParent(BuildManager.instance.ParentElement);
         node.GetComponent<Node>().turret = turret;
         gameHandler.GetComponent<WaveSpawner>().money -= 70;
         Destroy(actualObject);
@@ -67,6 +69,7 @@ public class Shop : MonoBehaviour
 
         GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
         turret = (GameObject)Instantiate(turretToBuild, nodeposition + new Vector3(0, 0.1f, 0), node.transform.rotation);
+        turret.transform.SetParent(BuildManager.instance.ParentElement);
         node.GetComponent<Node>().turret = turret;
         gameHandler.GetComponent<WaveSpawner>().money -= 70;
         Destroy(actualObject);

@@ -96,6 +96,7 @@ public class Turret : MonoBehaviour
 
     void Shoot () {
         GameObject bulletGo = (GameObject)Instantiate (bulletPrefab, firePoint.position, firePoint.rotation);
+        bulletGo.transform.SetParent(BuildManager.instance.ParentElement);
         Bullet bullet = bulletGo.GetComponent<Bullet>();
 
         if (bullet != null) {

@@ -130,10 +130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1531545283, guid: 23849e2f2f15eef4e81fc51531af7a3c, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 1614816770272835737, guid: 23849e2f2f15eef4e81fc51531af7a3c, type: 3}
       propertyPath: m_Name
       value: GameWorld
@@ -182,8 +178,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1614816771492197945, guid: 23849e2f2f15eef4e81fc51531af7a3c, type: 3}
+      propertyPath: ParentElement
+      value: 
+      objectReference: {fileID: 368696459}
+    - target: {fileID: 1614816771492197947, guid: 23849e2f2f15eef4e81fc51531af7a3c, type: 3}
+      propertyPath: ParentElement
+      value: 
+      objectReference: {fileID: 368696459}
+    - target: {fileID: 4973910103126120747, guid: 23849e2f2f15eef4e81fc51531af7a3c, type: 3}
+      propertyPath: m_Name
+      value: All_Objects
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23849e2f2f15eef4e81fc51531af7a3c, type: 3}
+--- !u!4 &368696459 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7402295587042667383, guid: 23849e2f2f15eef4e81fc51531af7a3c, type: 3}
+  m_PrefabInstance: {fileID: 368696458}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1575563444
 GameObject:
   m_ObjectHideFlags: 0

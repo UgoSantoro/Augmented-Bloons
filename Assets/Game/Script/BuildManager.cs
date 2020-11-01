@@ -5,6 +5,7 @@ using UnityEngine;
 public class BuildManager : MonoBehaviour
 {
     public Transform ShopParent;
+    public Transform ParentElement;
     public static BuildManager instance;
 
     void Awake()
