@@ -543,7 +543,7 @@ MonoBehaviour:
   SpeedEnemy: {fileID: 5145409616910889234, guid: 0599080f48f4dc04aa6479c93311da17, type: 3}
   FastAsFuckBoiEnemy: {fileID: 1631711982977519244, guid: dba068fa9c14f1a4298fdeccd7cd41a4, type: 3}
   SpawnPoint: {fileID: 2444401353659711008}
-  ParentElement: {fileID: 0}
+  ParentElement: {fileID: 7402295587042667383}
   End: {fileID: 1606779043}
   Time_btw_waves: 5
   hp: 5
@@ -565,6 +565,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShopParent: {fileID: 1614816771143692828}
+  ParentElement: {fileID: 7402295587042667383}
   TurretPrefab: {fileID: 3884486029752686697, guid: f195405398e78a64391284095b0e3860, type: 3}
   MissilePrefab: {fileID: 5692557436120029793, guid: 296aa47604ccc3349b665f5bbdd05641, type: 3}
   LaserPrefab: {fileID: 8308776603539139111, guid: c869c11cd1e9d134e835541fe90013ee, type: 3}
@@ -578,7 +579,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7402295587042667383}
   m_Layer: 0
-  m_Name: All_Instance
+  m_Name: All_Objects
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
