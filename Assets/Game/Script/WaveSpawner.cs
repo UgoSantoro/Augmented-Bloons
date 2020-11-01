@@ -22,7 +22,7 @@ public class WaveSpawner : MonoBehaviour
     private List<List<int>> waves = new List<List<int>>();
     private Dictionary<EnemyType, Transform> dict = new Dictionary<EnemyType, Transform>();
 
-    public float hp = 5f;
+    public float hp = 25f;
     public Text HP;
     public Text WaveCountdownTest;
 
@@ -42,12 +42,105 @@ public class WaveSpawner : MonoBehaviour
         dict.Add(EnemyType.Tank, TankEnemy);
         dict.Add(EnemyType.Speed, SpeedEnemy);
         dict.Add(EnemyType.FastAsFuckBoi, FastAsFuckBoiEnemy);
-        waves.Add(new List<int> { 1 });
-        waves.Add(new List<int> { 1, 1, 1, 1,1,1,1,1 });
-        waves.Add(new List<int> { 1, 1 });
-        waves.Add(new List<int> { 1 });
-        waves.Add(new List<int> { 1 });
-        waves.Add(new List<int> { 0, 1, 2, 3 });
+        waves.Add(new List<int> { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 });
+        waves.Add(new List<int> { 0, 0, 1, 1, 1, 1, 1, 1 });
+        waves.Add(new List<int> { 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 });
+        waves.Add(new List<int> { 2, 2, 2, 2, 2, 1, 1, 1 });
+        waves.Add(new List<int> { 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0 });
+        waves.Add(new List<int> { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 });
+        waves.Add(new List<int> { 0, 0, 1, 1, 1, 1, 1, 1 });
+        waves.Add(new List<int> { 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 });
+        waves.Add(new List<int> { 2, 2, 2, 2, 2, 1, 1, 1 });
+        waves.Add(new List<int> { 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0 });
+        waves.Add(new List<int> { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 });
+        waves.Add(new List<int> { 0, 0, 1, 1, 1, 1, 1, 1 });
+        waves.Add(new List<int> { 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 });
+        waves.Add(new List<int> { 2, 2, 2, 2, 2, 1, 1, 1 });
+        waves.Add(new List<int> { 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0 });
+        waves.Add(new List<int> { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 });
+        waves.Add(new List<int> { 0, 0, 1, 1, 1, 1, 1, 1 });
+        waves.Add(new List<int> { 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 });
+        waves.Add(new List<int> { 2, 2, 2, 2, 2, 1, 1, 1 });
+        waves.Add(new List<int> { 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0 });
+        waves.Add(new List<int> { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 });
+        waves.Add(new List<int> { 0, 0, 1, 1, 1, 1, 1, 1 });
+        waves.Add(new List<int> { 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 });
+        waves.Add(new List<int> { 2, 2, 2, 2, 2, 1, 1, 1 });
+        waves.Add(new List<int> { 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0 });
+        waves.Add(new List<int> { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 });
+        waves.Add(new List<int> { 0, 0, 1, 1, 1, 1, 1, 1 });
+        waves.Add(new List<int> { 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 });
+        waves.Add(new List<int> { 2, 2, 2, 2, 2, 1, 1, 1 });
+        waves.Add(new List<int> { 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0 });
+        waves.Add(new List<int> { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 });
+        waves.Add(new List<int> { 0, 0, 1, 1, 1, 1, 1, 1 });
+        waves.Add(new List<int> { 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 });
+        waves.Add(new List<int> { 2, 2, 2, 2, 2, 1, 1, 1 });
+        waves.Add(new List<int> { 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0 });
+        waves.Add(new List<int> { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 });
+        waves.Add(new List<int> { 0, 0, 1, 1, 1, 1, 1, 1 });
+        waves.Add(new List<int> { 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 });
+        waves.Add(new List<int> { 2, 2, 2, 2, 2, 1, 1, 1 });
+        waves.Add(new List<int> { 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0 });
+        waves.Add(new List<int> { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 });
+        waves.Add(new List<int> { 0, 0, 1, 1, 1, 1, 1, 1 });
+        waves.Add(new List<int> { 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 });
+        waves.Add(new List<int> { 2, 2, 2, 2, 2, 1, 1, 1 });
+        waves.Add(new List<int> { 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0 });
+        waves.Add(new List<int> { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 });
+        waves.Add(new List<int> { 0, 0, 1, 1, 1, 1, 1, 1 });
+        waves.Add(new List<int> { 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 });
+        waves.Add(new List<int> { 2, 2, 2, 2, 2, 1, 1, 1 });
+        waves.Add(new List<int> { 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0 });
+        waves.Add(new List<int> { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 });
+        waves.Add(new List<int> { 0, 0, 1, 1, 1, 1, 1, 1 });
+        waves.Add(new List<int> { 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 });
+        waves.Add(new List<int> { 2, 2, 2, 2, 2, 1, 1, 1 });
+        waves.Add(new List<int> { 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0 });
+        waves.Add(new List<int> { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 });
+        waves.Add(new List<int> { 0, 0, 1, 1, 1, 1, 1, 1 });
+        waves.Add(new List<int> { 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 });
+        waves.Add(new List<int> { 2, 2, 2, 2, 2, 1, 1, 1 });
+        waves.Add(new List<int> { 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0 });
+        waves.Add(new List<int> { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 });
+        waves.Add(new List<int> { 0, 0, 1, 1, 1, 1, 1, 1 });
+        waves.Add(new List<int> { 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 });
+        waves.Add(new List<int> { 2, 2, 2, 2, 2, 1, 1, 1 });
+        waves.Add(new List<int> { 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0 });
+        waves.Add(new List<int> { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 });
+        waves.Add(new List<int> { 0, 0, 1, 1, 1, 1, 1, 1 });
+        waves.Add(new List<int> { 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 });
+        waves.Add(new List<int> { 2, 2, 2, 2, 2, 1, 1, 1 });
+        waves.Add(new List<int> { 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0 });
+        waves.Add(new List<int> { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 });
+        waves.Add(new List<int> { 0, 0, 1, 1, 1, 1, 1, 1 });
+        waves.Add(new List<int> { 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3 });
+        waves.Add(new List<int> { 2, 2, 2, 2, 2, 1, 1, 1 });
+        waves.Add(new List<int> { 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0 });
+        waves.Add(new List<int> {
+            1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+            1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 
+            1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1
+        });
     }
 
     void Update()
