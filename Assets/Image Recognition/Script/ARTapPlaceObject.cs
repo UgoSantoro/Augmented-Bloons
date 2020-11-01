@@ -82,6 +82,14 @@ public class ARTapPlaceObject : MonoBehaviour
     public void replaceMap()
     {
         //SessionOrigin.MakeContentAppearAt(content, new Vector3(content.position.x + 1000, content.position.y, content.position.z), m_Rotation);
+        if (GameObject.Find("All_Objects").transform.childCount != 0)
+        {
+            int maxchild = GameObject.Find("All_Objects").transform.childCount;
+            for (int i = 0; i != maxchild; i++)
+            {
+                Destroy(GameObject.Find("All_Objects").transform.GetChild(i));
+            }
+        }
         Destroy(spawnedObject);
         Isspawned = 0;
     }
