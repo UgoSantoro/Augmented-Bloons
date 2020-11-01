@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
@@ -9,16 +11,18 @@ using UnityEngine.XR.ARSubsystems;
 [RequireComponent(typeof(ARRaycastManager))]
 public class ARTapPlaceObject : MonoBehaviour
 {
-    //public GameObject gameObjectToInstantiate;
+    public GameObject gameObjectToInstantiate;
 
     private ARRaycastManager _aRRaycastManager;
 
     ARSessionOrigin SessionOrigin;
 
 
-    private int spawnedObject = 0;
-    //private GameObject spawnedObject;
+    private int Isspawned = 0;
+    private GameObject spawnedObject;
     private Vector2 touchposition;
+
+    //public Button ReloadButton;
 
     static List<ARRaycastHit> hits = new List<ARRaycastHit>();
 
@@ -58,7 +62,9 @@ public class ARTapPlaceObject : MonoBehaviour
     {
         SessionOrigin = GetComponent<ARSessionOrigin>();
         _aRRaycastManager = GetComponent<ARRaycastManager>();
-        SessionOrigin.transform.localScale = Vector3.one * 100;
+        SessionOrigin.transform.localScale = Vector3.one * 50;
+
+        //ReloadButton.onClick.AddListener(replaceMap);
     }
 
     public bool TryGetTouchPosition(out Vector2 touchposition)
@@ -72,6 +78,13 @@ public class ARTapPlaceObject : MonoBehaviour
         return false;
     }
 
+    public void replaceMap()
+    {
+        //SessionOrigin.MakeContentAppearAt(content, new Vector3(content.position.x + 1000, content.position.y, content.position.z), m_Rotation);
+        Destroy(spawnedObject);
+        Isspawned = 0;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -82,11 +95,12 @@ public class ARTapPlaceObject : MonoBehaviour
         {
             var hitpose = hits[0].pose;
 
-            if (spawnedObject == 0)
+            if (Isspawned == 0)
             {
-                //spawnedObject = Instantiate(gameObjectToInstantiate, hitpose.position, hitpose.rotation);
+                spawnedObject = Instantiate(gameObjectToInstantiate, new Vector3(hitpose.position.x, hitpose.position.y + 1, hitpose.position.z), m_Rotation, GameObject.Find("Offset").transform);
                 SessionOrigin.MakeContentAppearAt(content, hitpose.position, m_Rotation);
-                spawnedObject = 1;
+
+                Isspawned = 1;
             }
 
             //spawnedObject = Instantiate(gameObjectToInstantiate, hitpose.position, hitpose.rotation);
