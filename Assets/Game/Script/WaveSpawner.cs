@@ -16,11 +16,14 @@ public class WaveSpawner : MonoBehaviour
     public Transform SpawnPoint;
 
     [Header("Settings")]
+    public GameObject End;
     public float Time_btw_waves = 5f;
     private float countdow = 2f;
     private List<List<int>> waves = new List<List<int>>();
     private Dictionary<EnemyType, Transform> dict = new Dictionary<EnemyType, Transform>();
 
+    public float hp = 5f;
+    public Text HP;
     public Text WaveCountdownTest;
 
     private int Waveindex = -1;
@@ -40,18 +43,21 @@ public class WaveSpawner : MonoBehaviour
         dict.Add(EnemyType.Speed, SpeedEnemy);
         dict.Add(EnemyType.FastAsFuckBoi, FastAsFuckBoiEnemy);
         waves.Add(new List<int> { 1 });
-        waves.Add(new List<int> { 1 });
+        waves.Add(new List<int> { 1, 1, 1, 1,1,1,1,1 });
         waves.Add(new List<int> { 1, 1 });
         waves.Add(new List<int> { 1 });
         waves.Add(new List<int> { 1 });
-        waves.Add(new List<int> { 0, 1, 2 ,3 });
+        waves.Add(new List<int> { 0, 1, 2, 3 });
     }
 
     void Update()
     {
         if (countdow <= 0f && Waveindex + 1 < waves.Count)
         {
-            StartCoroutine(SpawnWave());
+            if (hp > 0)
+                StartCoroutine(SpawnWave());
+            else if (hp <= 0)
+                End.SetActive(true);
         }
         if (GameObject.FindGameObjectsWithTag("Enemy").Length != 0)
         {
@@ -64,6 +70,8 @@ public class WaveSpawner : MonoBehaviour
             MoneyDisplay.text = money.ToString();
         if (WaveDisplay != null)
             WaveDisplay.text = (Waveindex + 1).ToString() + " / " + waves.Count.ToString();
+        if (HP != null)
+            HP.text = hp.ToString();
     }
 
     IEnumerator SpawnWave()

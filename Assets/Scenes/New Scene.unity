@@ -178,18 +178,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1614816771492197947, guid: 23849e2f2f15eef4e81fc51531af7a3c, type: 3}
-      propertyPath: TurretPrefab
-      value: 
-      objectReference: {fileID: 3884486029752686697, guid: f195405398e78a64391284095b0e3860, type: 3}
-    - target: {fileID: 1614816771492197947, guid: 23849e2f2f15eef4e81fc51531af7a3c, type: 3}
-      propertyPath: MissilePrefab
-      value: 
-      objectReference: {fileID: 5692557436120029793, guid: 296aa47604ccc3349b665f5bbdd05641, type: 3}
-    - target: {fileID: 1614816771492197947, guid: 23849e2f2f15eef4e81fc51531af7a3c, type: 3}
-      propertyPath: LaserPrefab
-      value: 
-      objectReference: {fileID: 8308776603539139111, guid: c869c11cd1e9d134e835541fe90013ee, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23849e2f2f15eef4e81fc51531af7a3c, type: 3}
 --- !u!1 &1575563444

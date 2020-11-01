@@ -32,6 +32,7 @@ public class Enemy : MonoBehaviour
 
     void GetNextWaypoint() {
         if (wavepointIndex >= Waypoints.points.Length - 1) {
+            gameHandler.GetComponent<WaveSpawner>().hp -= 1;
             Destroy(gameObject);
             return;
         }
