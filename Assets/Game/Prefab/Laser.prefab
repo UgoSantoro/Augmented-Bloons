@@ -458,11 +458,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b7adc0c4487087428a3ef8508264a78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 1
-  bulletPrefab: {fileID: 0}
-  range: 20
-  uselaser: 1
-  linerenderer: {fileID: 5692557436120029798}
+  fireRate: 0.25
+  power: 30
+  bulletPrefab: {fileID: 5096458224350122471, guid: ceeb1045164f4244d89840296850a09e, type: 3}
+  range: 30
+  uselaser: 0
+  linerenderer: {fileID: 0}
   enemyTag: Enemy
   partToRotate: {fileID: 8586052147533164995}
   firePoint: {fileID: 8586052147565945798}
@@ -473,7 +474,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5692557436120029793}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

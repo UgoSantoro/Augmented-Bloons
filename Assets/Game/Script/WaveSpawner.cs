@@ -40,6 +40,7 @@ public class WaveSpawner : MonoBehaviour
         dict.Add(EnemyType.Speed, SpeedEnemy);
         dict.Add(EnemyType.FastAsFuckBoi, FastAsFuckBoiEnemy);
         waves.Add(new List<int> { 1 });
+        waves.Add(new List<int> { 1 });
         waves.Add(new List<int> { 1, 1 });
         waves.Add(new List<int> { 1 });
         waves.Add(new List<int> { 1 });

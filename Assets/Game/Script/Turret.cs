@@ -7,6 +7,7 @@ public class Turret : MonoBehaviour
     private Transform target;
     [Header("General")]
     public float fireRate = 1f;
+    public float power = 1f;
 
     [Header("Use Bullets (default)")]
     public GameObject bulletPrefab;
@@ -87,7 +88,7 @@ public class Turret : MonoBehaviour
         linerenderer.SetPosition(0, firePoint.position);
         linerenderer.SetPosition(1, target.position);
         if (fireCountdown <= 0f) {
-            target.gameObject.GetComponent<Enemy>().Hit(0.1f);
+            target.gameObject.GetComponent<Enemy>().Hit(power);
             fireCountdown = 1f / fireRate / 30;
         }
         fireCountdown -= Time.deltaTime;
@@ -98,8 +99,14 @@ public class Turret : MonoBehaviour
         Bullet bullet = bulletGo.GetComponent<Bullet>();
 
         if (bullet != null) {
+            bullet.power = power;
             bullet.Seek(target);
         }
+    }
+
+    public void lvl_up()
+    {
+        power += power/10;
     }
 
     void OnDrawGizmosSelected () {

@@ -12,8 +12,10 @@ public class Node : MonoBehaviour
     public Vector3 positionOffset;
 
     public GameObject turret;
+    public GameObject node;
 
     public GameObject Shop;
+    public GameObject Level_up;
 
     private Renderer rend;
     BuildManager buildmanager;
@@ -39,8 +41,14 @@ public class Node : MonoBehaviour
                 Destroy(BuildManager.instance.ShopParent.GetChild(i).gameObject);
             }
         }
-        GameObject clone = Instantiate(Shop);
-        clone.transform.position = transform.position + new Vector3(0, 5.5f, 0);
+        GameObject Prefab;
+        if (turret == null)
+            Prefab = Shop;
+        else
+            Prefab = Level_up;
+
+        GameObject clone = Instantiate(Prefab);
+        clone.transform.position = node.transform.position + new Vector3(0, 5.5f, 10);
         clone.transform.SetParent(BuildManager.instance.ShopParent);
         clone.GetComponentInChildren<Shop>().positionOffset = positionOffset;
         clone.GetComponentInChildren<Shop>().nodeposition = transform.position;

@@ -197,9 +197,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShopParent: {fileID: 1614816771143692828}
-  TurretPrefab: {fileID: 7986459015526626821, guid: 0d3b29b68f1e24547bf70965e16762b1, type: 3}
-  MissilePrefab: {fileID: 6463670163377649887, guid: f284d27cd95a65941bf04e74fabbe06a, type: 3}
-  LaserPrefab: {fileID: 7986459015526626821, guid: 65bf6a3f3a30c1648b1361b5fd2e6729, type: 3}
+  TurretPrefab: {fileID: 3884486029752686697, guid: f195405398e78a64391284095b0e3860, type: 3}
+  MissilePrefab: {fileID: 8308776603539139111, guid: c869c11cd1e9d134e835541fe90013ee, type: 3}
+  LaserPrefab: {fileID: 5692557436120029793, guid: 296aa47604ccc3349b665f5bbdd05641, type: 3}
 --- !u!1001 &2062298804341397602
 PrefabInstance:
   m_ObjectHideFlags: 0

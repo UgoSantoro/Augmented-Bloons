@@ -77,6 +77,13 @@ public class Shop : MonoBehaviour
         return turret;
     }
 
+    public void Level_Up()
+    {
+        if (money < 50) return;
+        gameHandler.GetComponent<WaveSpawner>().money -= 50;
+        node.GetComponent<Node>().turret.GetComponent<Turret>().lvl_up();
+    }
+
     public void Destroy_Shop()
     {
         Destroy(actualObject);
