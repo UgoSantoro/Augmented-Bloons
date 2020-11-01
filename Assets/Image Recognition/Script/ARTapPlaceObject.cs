@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
@@ -97,10 +98,11 @@ public class ARTapPlaceObject : MonoBehaviour
 
             if (Isspawned == 0)
             {
-                spawnedObject = Instantiate(gameObjectToInstantiate, new Vector3(hitpose.position.x, hitpose.position.y + 1, hitpose.position.z), m_Rotation, GameObject.Find("Offset").transform);
-                SessionOrigin.MakeContentAppearAt(content, hitpose.position, m_Rotation);
-
                 Isspawned = 1;
+                spawnedObject = (GameObject)Instantiate(gameObjectToInstantiate, new Vector3(hitpose.position.x, hitpose.position.y + 1, hitpose.position.z), m_Rotation, GameObject.Find("Offset").transform);
+                SessionOrigin.MakeContentAppearAt(content, hitpose.position, m_Rotation);
+                GameObject.Find("GameHandler").GetComponent<WaveSpawner>().Start();
+
             }
 
             //spawnedObject = Instantiate(gameObjectToInstantiate, hitpose.position, hitpose.rotation);

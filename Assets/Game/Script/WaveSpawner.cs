@@ -37,7 +37,7 @@ public class WaveSpawner : MonoBehaviour
     public Text WaveDisplay;
     private int wave;
 
-    void Start () {
+    public void Start () {
         dict.Add(EnemyType.Normal, NormalEnemy);
         dict.Add(EnemyType.Tank, TankEnemy);
         dict.Add(EnemyType.Speed, SpeedEnemy);
