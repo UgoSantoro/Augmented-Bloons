@@ -25,3 +25,13 @@ MonoBehaviour:
     m_SpecifySize: 1
     m_Name: preview_5fd8128b
     m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5039437625555930194
+      m_GuidHigh: 1864878514224687003
+    m_SerializedTextureGuid:
+      m_GuidLow: 6657649753035448640
+      m_GuidHigh: 2517371290300058024
+    m_Size: {x: 0.3, y: 0.3}
+    m_SpecifySize: 1
+    m_Name: Temperature
+    m_Texture: {fileID: 0}

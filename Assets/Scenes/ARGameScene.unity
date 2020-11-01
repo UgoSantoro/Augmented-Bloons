@@ -659,6 +659,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3071657517356989312, guid: 5233a085331849849af04931f246fb74, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3071657517356989312, guid: 5233a085331849849af04931f246fb74, type: 3}
+      propertyPath: m_TrackedImagePrefab
+      value: 
+      objectReference: {fileID: 3884486029752686697, guid: f195405398e78a64391284095b0e3860, type: 3}
     - target: {fileID: 3071657517356989313, guid: 5233a085331849849af04931f246fb74, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -702,6 +710,10 @@ PrefabInstance:
     - target: {fileID: 3071657517356989313, guid: 5233a085331849849af04931f246fb74, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3071657517356989315, guid: 5233a085331849849af04931f246fb74, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3071657517356989316, guid: 5233a085331849849af04931f246fb74, type: 3}
       propertyPath: m_Name
